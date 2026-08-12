@@ -8,7 +8,7 @@
 - **Manual controls**: Previous/Next buttons + dot indicators
 - **Smart pause**: Auto-rotation pauses on hover, resumes on leave
 - **Backward compatible**: Single `image` field still works
-
+<!-- Just checking yhe deployement -->
 ### 📏 Feature 2: Larger Card Size
 - **Image height**: Increased from 200px → **400px**
 - **Full-width display**: Images now more prominent

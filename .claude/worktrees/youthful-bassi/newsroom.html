@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Newsroom - TATER World</title>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+
+.news-hero-bg {
+  background: linear-gradient(160deg, #050812 0%, #0a1020 45%, #0f1830 80%, #162035 100%);
+}
+
+/* ── FILTER BAR ───────────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  padding-bottom: 0;
+}
+
+.filter-btn {
+  padding: 0 0 1.25rem 0;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  color: rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  top: 1px;
+}
+
+.filter-btn:hover {
+  color: rgba(255,255,255,0.65);
+}
+
+.filter-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ── GRID ─────────────────────────────────────────────────── */
+.news-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.news-card {
+  background: #0b1422;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  transition: background 0.4s ease;
+}
+
+.news-card > div:first-child img {
+  display: block;
+}
+
+.news-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,0.3) 60%, transparent 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.news-card:hover {
+  background: #0f1a2e;
+}
+
+.news-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── CATEGORY LABEL ───────────────────────────────────────── */
+.news-tag {
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.55);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.news-tag::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: rgba(201,168,76,0.4);
+  flex-shrink: 0;
+}
+
+/* ── TITLE ────────────────────────────────────────────────── */
+.news-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  transition: color 0.3s;
+}
+
+.news-card:hover .news-title {
+  color: #fff;
+}
+
+/* ── BODY ─────────────────────────────────────────────────── */
+.news-body {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.35);
+  flex-grow: 1;
+  transition: color 0.3s;
+}
+
+.news-card:hover .news-body {
+  color: rgba(255,255,255,0.52);
+}
+
+/* ── COMING SOON ──────────────────────────────────────────── */
+.coming-soon-banner {
+  margin-top: 7rem;
+  padding: 5rem 4rem;
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+
+.csb-rule {
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent);
+  margin: 0 auto 2.5rem auto;
+}
+
+.csb-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.2);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.csb-desc {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.06em;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+.news-card a {
+  transition: all 0.3s ease;
+}
+
+.news-card a:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.12);
+  box-shadow: 0 0 20px rgba(201,168,76,0.15);
+}
+
+/* ── LIGHTBOX MODAL ───────────────────────────────────────── */
+.image-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-image-wrapper {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeInImage 0.3s ease forwards;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightbox-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: filter 0.2s ease;
+  object-fit: contain;
+}
+
+.lightbox-image-wrapper img:hover {
+  filter: brightness(0.8);
+}
+
+.lightbox-caption {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  background: rgba(201, 168, 76, 0.3);
+  border-color: rgba(201, 168, 76, 0.6);
+  transform: scale(1.1);
+}
+
+/* Prevent body scroll when lightbox is open */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .news-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .lightbox-close {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .lightbox-container {
+    padding: 1.5rem;
+  }
+
+  .lightbox-image-wrapper {
+    gap: 0.8rem;
+  }
+
+  .lightbox-caption {
+    font-size: 1rem;
+  }
+}
+
+/* Accordion Section Styling from community.html */
+.accordion-container {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; padding: 0 20px;
+  max-width: 1400px; margin: 0 auto;
+}
+
+.accordion-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  min-height: 280px;
+}
+
+.accordion-card:hover {
+  border-color: rgba(201,168,76,0.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.accordion-header {
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+  border-bottom: 1px solid var(--cream-dark);
+  background: linear-gradient(135deg, #fafaf8 0%, #fcfbf9 100%);
+}
+
+.accordion-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 400; color: var(--text-dark);
+  line-height: 1.2; margin: 0;
+}
+
+.accordion-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  background: transparent;
+  border: 1.5px solid rgba(201,168,76,0.35);
+  border-radius: 2px;
+  color: var(--gold-dark);
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  align-self: flex-start;
+}
+
+.accordion-btn:hover {
+  border-color: rgba(201,168,76,0.65);
+  background: rgba(201,168,76,0.08);
+}
+
+.accordion-btn i { font-size: 0.6rem; transition: transform 0.35s ease; }
+
+.accordion-btn.active i { transform: rotate(180deg); }
+
+.accordion-content {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  padding: 0 2rem;
+}
+
+.accordion-content.active { max-height: 500px; padding: 2rem; }
+
+.accordion-list {
+  list-style: none; display: flex; flex-direction: column; gap: 1rem;
+  margin: 0; padding: 0;
+}
+
+.accordion-list li {
+  font-size: 0.9rem; font-weight: 300; color: var(--text-mid);
+  line-height: 1.6; padding-left: 1.5rem; position: relative;
+}
+
+.accordion-list li::before {
+  content: '';
+  position: absolute; left: 0; width: 6px; height: 6px;
+  background: var(--gold); border-radius: 50%; top: 0.6rem;
+}
+
+.accordion-card.expanded { grid-column: 1 / -1; margin-top: 1rem; }
+.accordion-card.expanded .accordion-content { max-height: 600px; }
+
+@media (max-width: 900px) {
+  .accordion-container { grid-template-columns: 1fr; gap: 1.5rem; }
+  .accordion-card.expanded { grid-column: 1; }
+}
+
+@media (max-width: 900px) {
+  .org-card { grid-template-columns: 1fr; }
+  .org-card-visual { min-height: 220px; }
+  .org-card.flip .org-card-visual { order: 1; }
+  .org-card.flip .org-card-body { order: 2; }
+  .impact-4 { grid-template-columns: 1fr 1fr; }
+  .recognition-strip { flex-direction: column; gap: 2rem; padding: 2.5rem 2rem; }
+}
+
+@media (max-width: 640px) {
+  .news-grid-3 { grid-template-columns: 1fr; }
+  .news-card { padding: 2.5rem 2rem; }
+  .news-title { font-size: 1.3rem; }
+  .filter-bar { gap: 1.5rem; margin-bottom: 3rem; }
+}
+
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<section class="page-hero" style="padding-top:var(--nav-h)">
+  <div class="page-hero-bg news-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-tag">Newsroom</div>
+    <h1 class="page-hero-title">Stay <em>Informed</em></h1>
+    <p class="page-hero-lead">Achievements, events, and milestones from across the TATER World family of companies and community associations.</p>
+  </div>
+</section>
+
+<section class="section-wrap dark" id="newsroom-section">
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="participation">Participation</button>
+    <button class="filter-btn" data-filter="events">Events</button>
+    <button class="filter-btn" data-filter="achievements">Achievements</button>
+  </div>
+
+  <div class="news-grid-3 reveal" id="news-grid-container"></div>
+
+  <div class="coming-soon-banner" id="empty-state-banner" style="display: none;">
+    <div class="csb-rule"></div>
+    <h3 class="csb-title">No articles found</h3>
+    <p class="csb-desc">This category doesn't have any articles yet. Check back soon for more updates.</p>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div class="image-lightbox" id="image-lightbox">
+  <div class="lightbox-container">
+    <button class="lightbox-close" id="lightbox-close-btn">×</button>
+    <div class="lightbox-image-wrapper">
+      <img id="lightbox-image" src="" alt="Article image" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script src="data.js"></script>
+<script src="nav.js"></script>
+<script>
+  // ── NEWSROOM DYNAMIC CARD RENDERING ──────────────────────
+  document.addEventListener('DOMContentLoaded', function() {
+    const gridContainer = document.getElementById('news-grid-container');
+    const emptyStateBanner = document.getElementById('empty-state-banner');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    // Get all articles from TATER.news
+    const articles = TATER.news.articles || [];
+
+    // Function to render cards based on active filter
+    function renderCards(category) {
+      gridContainer.innerHTML = ''; // Clear existing cards
+
+      // Filter articles by category
+      const filteredArticles = articles.filter(article => article.category === category);
+
+      // Show/hide empty state
+      if (filteredArticles.length === 0) {
+        emptyStateBanner.style.display = 'block';
+        gridContainer.style.display = 'none';
+        return;
+      }
+
+      emptyStateBanner.style.display = 'none';
+      gridContainer.style.display = 'grid';
+
+      // Render each article as a card
+      filteredArticles.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        card.setAttribute('data-category', article.category);
+
+        const imageHTML = article.image 
+          ? `<div style="width: calc(100% + 6rem); height: 200px; background: linear-gradient(135deg, #0f1a2e, #162035); overflow: hidden; margin: -3rem -3rem 1rem -3rem; display: flex; align-items: center; justify-content: center;">
+               <img src="${article.image}" alt="${article.title}" style="width: 100%; height: 100%; object-fit: cover;">
+             </div>`
+          : `<div style="width: calc(100% + 6rem); height: 200px; background: linear-gradient(135deg, #0f1a2e, #162035); margin: -3rem -3rem 1rem -3rem;"></div>`;
+
+        card.innerHTML = `
+          ${imageHTML}
+          <div class="news-tag">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</div>
+          <h3 class="news-title">${article.title}</h3>
+          <p class="news-body">${article.summary}</p>
+          <div style="margin-top: 0.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,168,76,0.15); display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.75rem; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; text-transform: uppercase;">${article.date}</span>
+            <a href="${article.link}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; color: var(--gold); text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; transition: opacity 0.3s; border: 1px solid rgba(201,168,76,0.4); padding: 0.5rem 1rem; cursor: pointer;">
+              Learn More →
+            </a>
+          </div>
+        `;
+
+        gridContainer.appendChild(card);
+      });
+    }
+
+    // Filter button click handlers
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        // Get the filter category from button
+        const category = this.getAttribute('data-filter');
+        // Render cards for this category
+        renderCards(category);
+      });
+    });
+
+    // Initial render with 'participation' category selected
+    renderCards('participation');
+
+    // ── LIGHTBOX FUNCTIONALITY ───────────────────────────────
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close-btn');
+
+    // Open lightbox when clicking on card images
+    document.addEventListener('click', function(e) {
+      // Check if clicked element is an image inside a news card
+      if (e.target.tagName === 'IMG' && e.target.closest('.news-card')) {
+        const img = e.target;
+        const card = img.closest('.news-card');
+        const titleElement = card.querySelector('.news-title');
+        const title = titleElement ? titleElement.textContent : 'Article Image';
+
+        // Set lightbox content
+        lightboxImage.src = img.src;
+        lightboxImage.alt = title;
+        lightboxCaption.textContent = title;
+
+        // Show lightbox with animation
+        lightbox.classList.add('active');
+        document.body.classList.add('lightbox-open');
+      }
+    });
+
+    // Close lightbox function
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.classList.remove('lightbox-open');
+    }
+
+    // Close button click
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close when clicking on the overlay (but not the image wrapper)
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close when clicking the image itself
+    lightboxImage.addEventListener('click', closeLightbox);
+
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  });
+</script>
+</body>
+</html>

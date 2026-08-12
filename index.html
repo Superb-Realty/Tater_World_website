@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="TATER World is a multi-sector business group spanning jewellery, real estate and community-led initiatives, built on trust, excellence and long-term value." />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta name="theme-color" content="#0D1B2A" />
+<script>
+  if (window.location.pathname.endsWith('/index.html')) {
+    const cleanPath = window.location.pathname.slice(0, -'index.html'.length) || '/';
+    window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+  }
+</script>
+<link rel="canonical" href="https://www.taterworld.in/" />
+<link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/favicon-192x192.png" />
+<link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TATER World â€” A Legacy of Trust, A Future of Excellence" />
+<meta property="og:description" content="TATER World is a multi-sector business group spanning jewellery, real estate and community-led initiatives, built on trust, excellence and long-term value." />
+<meta property="og:url" content="https://www.taterworld.in/" />
+<meta property="og:image" content="https://www.taterworld.in/images/logos/Tater_World_gold_logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TATER World â€” A Legacy of Trust, A Future of Excellence" />
+<meta name="twitter:description" content="TATER World is a multi-sector business group spanning jewellery, real estate and community-led initiatives, built on trust, excellence and long-term value." />
+<meta name="twitter:image" content="https://www.taterworld.in/images/logos/Tater_World_gold_logo.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.taterworld.in/#organization",
+      "name": "TATER World",
+      "url": "https://www.taterworld.in/",
+      "description": "TATER World is a multi-sector business group spanning jewellery, real estate and community-led initiatives, built on trust, excellence and long-term value.",
+      "foundingDate": "1981",
+      "founder": {
+        "@type": "Person",
+        "name": "Shri Khyalilal Tater"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6th Floor, Sapphire Business Annexe, M.G. Road",
+        "addressLocality": "Ghatkopar East",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400077",
+        "addressCountry": "IN"
+      },
+      "knowsAbout": [
+        "Jewellery",
+        "Real estate",
+        "Community initiatives",
+        "Corporate social responsibility"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.taterworld.in/images/logos/Tater_World_gold_logo.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.taterworld.in/#website",
+      "url": "https://www.taterworld.in/",
+      "name": "TATER World",
+      "publisher": {
+        "@id": "https://www.taterworld.in/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.taterworld.in/#webpage",
+      "url": "https://www.taterworld.in/",
+      "name": "TATER World",
+      "description": "TATER World is a multi-sector business group spanning jewellery, real estate and community-led initiatives, built on trust, excellence and long-term value.",
+      "isPartOf": {
+        "@id": "https://www.taterworld.in/#website"
+      },
+      "about": {
+        "@id": "https://www.taterworld.in/#organization"
+      }
+    }
+  ]
+}
+</script>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TATER World</title>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+/* ── HOME-SPECIFIC ─────────────────────────────────────────── */
+.home-hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  padding: var(--nav-h) 4.5rem 7rem;
+}
+
+.hero-bg-geo {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse at 20% 80%, rgba(30,52,72,0.8) 0%, transparent 60%),
+              linear-gradient(135deg, #060e18 0%, #0D1B2A 100%);
+}
+
+.hero-grid-lines {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(201,168,76,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-circle {
+  position: absolute; right: calc(8% - 30px); top: 50%; transform: translateY(-50%);
+  z-index: 1; pointer-events: none;
+}
+
+.ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.12);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+.ring-1 { width: 520px; height: 520px; animation: rotateSlow 60s linear infinite; }
+.ring-2 { width: 400px; height: 400px; border-color: rgba(201,168,76,0.2); animation: rotateSlow 40s linear infinite; }
+.ring-3 { width: 280px; height: 280px; border-color: rgba(201,168,76,0.3); animation: rotateSlow 30s linear infinite; }
+
+.ring-dot {
+  position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--gold);
+  top: 50%; left: 50%; transform-origin: 0 0;
+}
+
+/* Ring 1 - 4 dots evenly spaced (90 degrees apart) */
+.ring-1 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-260px); }
+.ring-1 .ring-dot:nth-child(2) { transform: rotate(90deg) translateY(-260px); }
+.ring-1 .ring-dot:nth-child(3) { transform: rotate(180deg) translateY(-260px); }
+/* .ring-1 .ring-dot:nth-child(4) { transform: rotate(270deg) translateY(-260px); } */
+
+/* Ring 2 - 5 dots evenly spaced (72 degrees apart) */
+.ring-2 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-200px); }
+.ring-2 .ring-dot:nth-child(2) { transform: rotate(72deg) translateY(-200px); }
+.ring-2 .ring-dot:nth-child(3) { transform: rotate(144deg) translateY(-200px); }
+/* .ring-2 .ring-dot:nth-child(4) { transform: rotate(216deg) translateY(-200px); }
+.ring-2 .ring-dot:nth-child(5) { transform: rotate(288deg) translateY(-200px); } */
+
+/* Ring 3 - 3 dots evenly spaced (120 degrees apart) */
+.ring-3 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-140px); }
+.ring-3 .ring-dot:nth-child(2) { transform: rotate(120deg) translateY(-140px); }
+/* .ring-3 .ring-dot:nth-child(3) { transform: rotate(240deg) translateY(-140px); } */
+
+.ring-center {
+  position: relative; z-index: 2;
+  width: 220px; height: 220px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 80%);
+}
+
+.ring-center-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 300; color: var(--gold); line-height: 1;
+}
+.ring-center-logo {
+  height: 185px;
+  width: auto;
+  max-width: 180px;
+  display: block;
+  object-fit: contain;
+  /* Tint the logo to a gold-like color */
+  filter: brightness(0) saturate(100%) invert(64%) sepia(66%) saturate(650%) hue-rotate(6deg) brightness(95%) contrast(92%);
+}
+.ring-center-sub {
+  font-size: 0.55rem; font-weight: 500; letter-spacing: 0.4em;
+  text-transform: uppercase; color: rgba(201,168,76,0.5);
+  margin-top: 0.4rem;
+}
+
+@keyframes rotateSlow { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+.home-hero-content { position: relative; z-index: 2; max-width: 780px; margin-top: 0rem; }
+
+.hero-tag {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.4em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-top: 2rem;
+    margin-bottom: 2rem;
+
+  animation: fadeUp 0.8s ease both 0.2s;
+}
+.hero-tag::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+  font-weight: 300; color: var(--white); line-height: 1.0;
+  animation: fadeUp 0.9s ease both 0.35s;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-title strong { display: block; font-weight: 600; }
+
+.hero-quote {
+  margin: 2.5rem 0 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(201,168,76,0.4);
+  animation: fadeUp 1s ease both 0.5s;
+}
+.hero-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-style: italic; font-weight: 300;
+  color: rgba(255,255,255,0.65); line-height: 1.7;
+}
+.hero-quote cite {
+  display: block; margin-top: 0.6rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(201,168,76,0.7);
+}
+
+.hero-ctas {
+  display: flex; gap: 1rem; margin-top: 3rem;
+  animation: fadeUp 1s ease both 0.65s;
+}
+
+.hero-stats-bar {
+  display: flex; gap: 0; margin-top: 5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 2.5rem;
+  animation: fadeUp 1s ease both 0.8s;
+}
+
+.hero-stat {
+  flex: 1; padding-right: 2.5rem;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  margin-right: 2.5rem;
+}
+.hero-stat:last-child { border-right: none; margin-right: 0; }
+
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1;
+}
+.hero-stat-num sup { font-size: 1.2rem; }
+
+.hero-stat-label {
+  font-size: 0.62rem; font-weight: 400; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+  margin-top: 0.35rem;
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* ── SECTOR SECTION ──────────────────────────────────────────── */
+.sectors-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; background: var(--cream);
+}
+/* When the last panel lands alone on a row, span it full width */
+.sectors-row > .sector-panel:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.sector-panel {
+  height: 320px; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 3.5rem;
+  text-decoration: none;
+  transition: flex 0.6s ease;
+}
+
+.sector-panel-bg { position: absolute; inset: 0; z-index: 0; transition: transform 0.6s ease; }
+.sector-panel:hover .sector-panel-bg { transform: scale(1.04); }
+
+.sector-jewellery .sector-panel-bg {
+  background: linear-gradient(160deg, rgba(15,4,0,0.82) 0%, rgba(61,26,0,0.68) 40%, rgba(123,90,16,0.55) 70%, rgba(201,168,76,0.38) 100%),
+    url('images/photos/Jewellery_Card_holder.png') center center/cover no-repeat;
+}
+.sector-realty .sector-panel-bg {
+  background: linear-gradient(160deg, rgba(5,12,20,0.82) 0%, rgba(13,27,42,0.80) 50%, rgba(30,52,72,0.76) 100%),
+    url('images/photos/Altura_Elevation_holder.jpg') center center/cover no-repeat;
+}
+.sector-education .sector-panel-bg {
+  background: linear-gradient(160deg, #030e06 0%, #0b2a10 45%, #195a22 75%, #2a8c38 100%);
+}
+.sector-finance .sector-panel-bg {
+  background: linear-gradient(160deg, rgba(10,15,30,0.82) 0%, rgba(15,30,60,0.80) 50%, rgba(40,70,120,0.76) 100%),
+      url('images/sectors/Finance_sector.jpg') center center/cover no-repeat;
+
+}
+.sector-emerging .sector-panel-bg {
+  background: linear-gradient(160deg, rgba(30,10,20,0.82) 0%, rgba(60,20,40,0.80) 50%, rgba(120,40,80,0.76) 100%),
+        url('images/sectors/Emerging_sector.jpg') center center/cover no-repeat;
+
+}
+
+.sector-panel-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+}
+
+.sector-panel-content { position: relative; z-index: 2; }
+
+.sector-panel-tag {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.35em;
+  text-transform: uppercase; color: rgba(201,168,76,0.8);
+  margin-bottom: 0.6rem;
+}
+
+.sector-panel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 300; color: var(--white);
+  line-height: 1.1; margin-bottom: 1rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.sector-panel-count {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+}
+
+.sector-panel-arrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  border-bottom: 1px solid rgba(201,168,76,0.4);
+  padding-bottom: 2px;
+  opacity: 0; transform: translateY(8px);
+  transition: all 0.35s ease;
+}
+.sector-panel:hover .sector-panel-arrow { opacity: 1; transform: translateY(0); }
+
+/* ── COMPANY STRIP ────────────────────────────────────────── */
+.company-strip {
+  background: var(--white);
+  padding: 5rem 4.5rem;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.company-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.company-strip-item {
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--cream-dark);
+  text-decoration: none;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.company-strip-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.company-strip-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.csi-sector {
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.csi-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 500; color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.csi-year-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.csi-since {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-light);
+  margin-bottom: -0.2rem;
+  line-height: 1.2;
+}
+
+.csi-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 300;
+  color: var(--cream-dark);
+  line-height: 0.8;
+}
+
+/* ── FOUNDER STRIP ────────────────────────────────────────── */
+.founder-strip {
+  background: var(--navy);
+  padding: 6rem 4.5rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: center;
+}
+
+.founder-strip-left .section-label { color: var(--gold); }
+
+.founder-quote-block {
+  margin: 2rem 0;
+  padding: 2.5rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(201,168,76,0.04);
+}
+.founder-quote-block blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-style: italic; font-weight: 300;
+  color: var(--white); line-height: 1.65;
+}
+.founder-quote-block cite {
+  display: block; margin-top: 1rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+}
+
+.founder-legacy-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(201,168,76,0.1);
+}
+.flg-item {
+  background: var(--navy-light);
+  padding: 2rem 1.5rem;
+  transition: background 0.3s;
+}
+.flg-item:hover { background: var(--navy-mid); }
+.flg-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 300;
+  color: rgba(201,168,76,0.2); line-height: 1;
+}
+.flg-title {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold);
+  margin: 0.4rem 0 0.3rem;
+}
+.flg-desc {
+  font-size: 0.78rem; font-weight: 300; line-height: 1.7;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── VALUES GRID ────────────────────────────────────────── */
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--cream-dark); }
+.value-card { background: var(--white); padding: 2rem 1.75rem; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.value-card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); transform: translateY(-4px); }
+.value-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold-pale); line-height: 1; margin-bottom: 1rem; }
+.value-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 0.6rem; }
+.value-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.75; color: var(--text-light); }
+
+@media (min-width: 1100px) {
+  .hero-circle-mobile { display: none; }
+}
+
+@media (max-width: 1100px) {
+  .home-hero { padding: var(--nav-h) 2rem 5rem; }
+  .hero-circle-mobile { display: none; }
+  .hero-circle {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 4rem auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .ring-1 { width: 350px; height: 350px; }
+  .ring-2 { width: 260px; height: 260px; }
+  .ring-3 { width: 170px; height: 170px; }
+  .ring-1 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-175px); }
+  .ring-1 .ring-dot:nth-child(2) { transform: rotate(90deg) translateY(-175px); }
+  .ring-1 .ring-dot:nth-child(3) { transform: rotate(180deg) translateY(-175px); }
+  .ring-2 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-130px); }
+  .ring-2 .ring-dot:nth-child(2) { transform: rotate(72deg) translateY(-130px); }
+  .ring-2 .ring-dot:nth-child(3) { transform: rotate(144deg) translateY(-130px); }
+  .ring-3 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-85px); }
+  .ring-3 .ring-dot:nth-child(2) { transform: rotate(120deg) translateY(-85px); }
+  .ring-center { width: 150px; height: 150px; }
+  .ring-center-text { font-size: 2.2rem; }
+  .ring-center-logo { height: 120px; }
+  .ring-center-sub { font-size: 0.45rem; }
+  .sectors-row { grid-template-columns: 1fr; }
+  .sector-panel { min-height: 320px; }
+  .company-strip { padding: 3rem 2rem; }
+  .company-strip-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .founder-strip { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero-circle-mobile { display: none; }
+  .home-hero { padding: var(--nav-h) 1.5rem 3rem; }
+  .ring-1 { width: 300px; height: 300px; }
+  .ring-2 { width: 220px; height: 220px; }
+  .ring-3 { width: 140px; height: 140px; }
+  .ring-1 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-150px); }
+  .ring-1 .ring-dot:nth-child(2) { transform: rotate(90deg) translateY(-150px); }
+  .ring-1 .ring-dot:nth-child(3) { transform: rotate(180deg) translateY(-150px); }
+  .ring-2 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-110px); }
+  .ring-2 .ring-dot:nth-child(2) { transform: rotate(72deg) translateY(-110px); }
+  .ring-2 .ring-dot:nth-child(3) { transform: rotate(144deg) translateY(-110px); }
+  .ring-3 .ring-dot:nth-child(1) { transform: rotate(0deg) translateY(-70px); }
+  .ring-3 .ring-dot:nth-child(2) { transform: rotate(120deg) translateY(-70px); }
+  .ring-center { width: 120px; height: 120px; }
+  .ring-center-text { font-size: 1.8rem; }
+  .ring-center-logo { height: 100px; }
+  .company-strip { padding: 3rem 1.5rem; }
+  .company-strip-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  /* CSR Teaser Section Responsiveness */
+  section.light > div {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  section.light > div > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width:680px) {
+  .home-hero { padding: var(--nav-h) 1rem 2rem; }
+  .hero-circle { display: none; }
+  .hero-circle-mobile { display: flex; margin: 2rem auto 4rem; width: 100%; max-width: 320px; }
+}
+
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+<main id="main-content">
+
+<!-- ── HERO ────────────────────────────────────────────────── -->
+<section class="home-hero" id="home">
+  <div class="hero-bg-geo"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="home-hero-content">
+    <div class="hero-tag">Est. 1981 &nbsp;·&nbsp; Mumbai, India</div>
+    <h1 class="hero-title">
+      A Legacy of <em>Trust,</em><br>
+      <strong>A Future of Excellence.</strong>
+    </h1>
+    <blockquote class="hero-quote">
+      <p>"The greatest success is defined by the scale of value created and the enduring impact it leaves behind."</p>
+      <cite>— Shri Khyalilal Tater, Founder</cite>
+    </blockquote>
+    <div class="hero-ctas">
+      <a href="about.html" class="btn btn-outline-gold">Discover Our Story <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="businesses.html" class="btn btn-outline-white">Our Businesses</a>
+    </div>
+    <!-- Mobile version of the hero circle, shown on smaller screens -->
+      <div class="hero-circle-mobile">
+    <div style="position:relative;width:520px;height:520px;">
+      <div class="ring ring-1">
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+      </div>
+      <div class="ring ring-2">
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+      </div>
+      <div class="ring ring-3">
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+      </div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+        <div class="ring-center">
+          <img
+            src="images/logos/tater-world.png"
+            alt="TATER World logo"
+            class="ring-center-logo"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="ring-center-sub">Est. 1981</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Stats rendered from TATER.stats in data/site.js -->
+    <div class="hero-stats-bar" id="hero-stats-bar"></div>
+  </div>
+
+  <div class="hero-circle">
+    <div style="position:relative;width:520px;height:520px;">
+      <div class="ring ring-1">
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+      </div>
+      <div class="ring ring-2">
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+      </div>
+      <div class="ring ring-3">
+        <div class="ring-dot"></div>
+        <div class="ring-dot"></div>
+      </div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+        <div class="ring-center">
+          <img
+            src="images/logos/tater-world.png"
+            alt="TATER World logo"
+            class="ring-center-logo"
+          />
+          <div class="ring-center-sub">Est. 1981</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTOR PANELS — rendered from TATER.sectors ─────────── -->
+<div class="sectors-row" id="sectors-row"></div>
+
+<!-- ── COMPANY STRIP — rendered from TATER.companies ─────────── -->
+<div class="company-strip reveal" id="company-strip"></div>
+
+<!-- ── FOUNDER STRIP ───────────────────────────────────────── -->
+
+<!-- ── SIX PILLARS — rendered from TATER.values ───────────── -->
+<section class="section-wrap light" id="values">
+  <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
+    <!-- <h2 style="font-size: 20px;color: #C9A84C;"> <em>Six Pillars</em></h> -->
+    <h2 class="section-title center"><em>TATER WORLD Ethos</em></h2>
+  </div>
+  <div class="values-grid reveal" id="values-grid"></div>
+</section>
+<!-- ── NEWSROOM TEASER ─────────────────────────────────────── -->
+<section class="section-wrap dark reveal">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem">
+    <div>
+      <div class="section-label">Latest</div>
+      <h2 class="section-title light">From the <em>Newsroom</em></h2>
+    </div>
+    <a href="newsroom.html" class="btn btn-outline-gold">View all <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="card-grid-3" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="content-card dark-card" style="border-top:2px solid var(--gold)">
+      <div class="card-pad">
+        <div class="card-tag">Participation</div>
+        <div class="card-title">Group Participations &amp; Industry Presence</div>
+        <div class="card-body">Updates on TATER World's presence across jewellery trade events and real estate showcases.</div>
+      </div>
+    </div>
+    <div class="content-card dark-card" style="border-top:2px solid rgba(201,168,76,0.4)">
+      <div class="card-pad">
+        <div class="card-tag">Events</div>
+        <div class="card-title">Upcoming Events &amp; Community Occasions</div>
+        <div class="card-body">From launches to community celebrations — this section will be updated with live events from the group.</div>
+      </div>
+    </div>
+    <div class="content-card dark-card" style="border-top:2px solid rgba(201,168,76,0.2)">
+      <div class="card-pad">
+        <div class="card-tag">Achievements</div>
+        <div class="card-title">Milestones, Awards &amp; Recognitions</div>
+        <div class="card-body">Celebrating the achievements that reflect our five-decade commitment to excellence across everything we build.</div>
+      </div>
+    </div>
+    <div class="content-card dark-card" style="border-top:2px solid rgba(201,168,76,0.3)">
+      <div class="card-pad">
+        <div class="card-tag">Media</div>
+        <div class="card-title">Press &amp; Media Coverage</div>
+        <div class="card-body">Featured articles and press releases about TATER World — covering industry insights and group announcements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="footer-root"></div>
+<script src="data/init.js"></script>
+<script src="data/site.js"></script>
+<script src="data/companies.js"></script>
+<script src="data/leadership.js"></script>
+<script src="data/founder.js"></script>
+<script src="data/csr.js"></script>
+<script src="data/news.js"></script>
+<script src="nav.js"></script>
+<script>
+/* ── INDEX PAGE RENDERER ───────────────────────────────────────
+   Dynamic sections rendered from split TATER data files.
+   ─────────────────────────────────────────────────────────────── */
+const arrowMd = `<svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+/* Hero stats bar */
+document.getElementById('hero-stats-bar').innerHTML = TATER.stats.map((s, i) => `
+  <div class="hero-stat">
+    <div class="hero-stat-num">${s.num}${s.sup ? `<sup>${s.sup}</sup>` : ''}</div>
+    <div class="hero-stat-label">${s.label}</div>
+  </div>
+`).join('');
+
+/* Sector panels */
+document.getElementById('sectors-row').innerHTML = TATER.sectors.map(s => `
+  <a href="businesses.html#${s.id}" class="sector-panel ${s.panelClass}">
+    <div class="sector-panel-bg"></div>
+    <div class="sector-panel-overlay"></div>
+    <div class="sector-panel-content">
+      <div class="sector-panel-tag">Sector ${s.number}</div>
+      <h2 class="sector-panel-title">${s.label}</h2>
+      <div class="sector-panel-count">${s.panelCount}</div>
+      <div class="sector-panel-arrow">Explore<svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+  </a>
+`).join('');
+
+/* Company strip */
+const sectorNames = {};
+TATER.sectors.forEach(s => sectorNames[s.id] = s.label);
+
+const stripItems = TATER.companies.map(c => `
+  <a href="businesses.html#${c.id}" class="company-strip-item">
+    <div class="csi-sector">${sectorNames[c.sector] || c.sector}</div>
+    <div class="csi-name">${c.name}</div>
+    <div class="csi-year-wrapper">
+      <div class="csi-since">Since</div>
+      <div class="csi-year">${c.yearDisplay}</div>
+    </div>
+  </a>
+`).join('');
+
+/* Values grid */
+document.getElementById('values-grid').innerHTML = TATER.values.map(v => `
+  <div class="value-card">
+    <div class="value-num">${v.num}</div>
+    <div class="value-title">${v.title}</div>
+    <div class="value-desc">${v.desc}</div>
+  </div>
+`).join('');
+
+document.getElementById('company-strip').innerHTML = `
+  <div class="section-label" style="margin-bottom:2rem">Our Family of Companies</div>
+  <div class="company-strip-inner">${stripItems}</div>
+`;
+</script>
+</body>
+</html>

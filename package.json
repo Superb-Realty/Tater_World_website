@@ -1,0 +1,19 @@
+{
+  "name": "tater-world-website",
+  "version": "1.0.0",
+  "description": "Static corporate website for the TATER World group. The site is built with plain HTML, CSS, and JavaScript and is organized around shared data files for company, leadership, CSR, and newsroom content.",
+  "main": "data-loader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yashkumar23092003/Tater-world-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yashkumar23092003/Tater-world-Website/issues"
+  },
+  "homepage": "https://github.com/Yashkumar23092003/Tater-world-Website#readme"
+}

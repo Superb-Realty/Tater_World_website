@@ -1,0 +1,8 @@
+Unstaged changes after reset:
+M	about.html
+warning: in the working copy of 'about.html', LF will be replaced by CRLF the next time Git touches it
+[main f6ed9a1] Fix about.html: restore truncated script, new MD card layout working
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+To https://github.com/Yashkumar23092003/Tater-world-Website.git
+   cc64faa..f6ed9a1  main -> main
+DONE 

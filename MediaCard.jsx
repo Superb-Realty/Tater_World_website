@@ -31,7 +31,7 @@ export default function MediaCard({ article }) {
         </div>
       </div>
 
-      {/* Metadata Row - Date + Tags */}
+      {/* Metadata Row - Date + Tags*/}
       <div className="px-6 pb-4 flex justify-between items-center gap-4 md:px-5 sm:px-4">
         <span className="inline-flex items-center px-4 py-2 border border-[#c8b89a] rounded-full text-xs md:text-xs font-semibold text-[#1a1410] uppercase tracking-wider whitespace-nowrap">
           {article.date}

@@ -6,7 +6,7 @@
 
 export default function MediaCard({ article }) {
   if (!article) return null;
-
+// ok
   return (
     <article className="bg-[#FAF7F2] border border-[#e5e0d8] rounded-[16px] overflow-hidden transition-all duration-400 hover:border-[#8B6914] hover:shadow-[0_12px_32px_rgba(0,0,0,0.15)]">
       {/* Title Section */}

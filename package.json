@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Yashkumar23092003/Tater-world-Website/issues"
   },
-  "homepage": "https://github.com/Yashkumar23092003/Tater-world-Website#readme"
+  "homepage": "https://github.com/Yashkumar23092003/Tater-world-Website#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
 }
